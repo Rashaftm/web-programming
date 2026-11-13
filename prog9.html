@@ -1,0 +1,35 @@
+<html>
+<head><title>Background Color Changer</title>
+<style>
+body {text-align: center;
+    padding-top: 100px;
+}
+button {
+    background: purple;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+}</style></head>
+<body>
+<h2>Background Color Changer</h2>
+<button onclick="changeColor()">Change Color</button>
+<script>
+var count = 0;
+function changeColor() {
+    count++;
+    if(count == 1)
+        document.body.style.backgroundColor = "red";
+    else if(count == 2)
+        document.body.style.backgroundColor = "blue";
+    else if(count == 3)
+        document.body.style.backgroundColor = "green";
+    else if(count == 4)
+        document.body.style.backgroundColor = "pink";
+    else {
+        document.body.style.backgroundColor = "yellow";
+        count = 0;
+}}
+</script>
+</body>
+</html>
