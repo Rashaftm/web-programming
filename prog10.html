@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>Mouse Over Event</title>
+<style>
+body {
+    text-align: center;
+    font-family: Arial;
+    padding-top: 50px;
+}
+img {
+    width: 200px;
+    height: 150px;
+    border-radius: 10px;
+}
+h2 {
+    color: purple;
+}
+</style>
+</head>
+<body>
+<h2>Mouse Over Event</h2>
+
+<img id="pic" src="img1.jpeg"
+     onmouseover="changeContent()"
+     onmouseout="changeBack()">
+
+<p id="msg">Move mouse over this image</p>
+
+<script>
+function changeContent() {
+    document.getElementById("pic").src = "img2.jpeg";
+    document.getElementById("msg").innerHTML = "Welcome! New Image Displayed";
+}
+
+function changeBack() {
+    document.getElementById("pic").src = "img1.jpeg";
+    document.getElementById("msg").innerHTML = "Move mouse over this image";
+}
+</script>
+</body>
+</html>
