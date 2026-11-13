@@ -1,0 +1,85 @@
+<html>
+<head>
+<title>Online Exam</title>
+<style>
+body {
+    background: purple;
+    text-align: center;
+    font-family: Arial;
+}
+form {
+    background: white;
+    width: 350px;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 10px;
+}
+h2 {
+    color: purple;
+}
+.question {
+    text-align: left;
+    margin: 15px;
+}
+input[type="submit"] {
+    background: purple;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+</style>
+</head>
+<body>
+<form onsubmit="return checkAnswer()">
+<h2>Online Examination</h2>
+<p>Answer all questions</p>
+<div class="question">
+<p>1. Which language is used for web designing?</p>
+<input type="radio" name="q1" value="HTML"> HTML<br>
+<input type="radio" name="q1" value="Java"> Java<br>
+<input type="radio" name="q1" value="Python"> Python<br>
+</div>
+<div class="question">
+<p>2. Which language is used for styling web pages?</p>
+<input type="radio" name="q2" value="CSS"> CSS<br>
+<input type="radio" name="q2" value="C"> C<br>
+<input type="radio" name="q2" value="Java"> Java<br>
+</div>
+<div class="question">
+<p>3. Which language is used for web interactivity?</p>
+<input type="radio" name="q3" value="JavaScript"> JavaScript<br>
+<input type="radio" name="q3" value="HTML"> HTML<br>
+<input type="radio" name="q3" value="SQL"> SQL<br>
+</div><br>
+<input type="submit" value="Submit Exam">
+<h3 id="result"></h3>
+</form>
+<script>
+function checkAnswer() {
+      var score = 0;
+    var q1 = document.querySelector('input[name="q1"]:checked');
+    var q2 = document.querySelector('input[name="q2"]:checked');
+    var q3 = document.querySelector('input[name="q3"]:checked');
+    if (q1 && q2 && q3) {
+      if (q1.value == "HTML") {
+            score++;
+        }
+        if (q2.value == "CSS") {
+            score++;
+        }
+        if (q3.value == "JavaScript") {
+            score++;
+        }
+        document.getElementById("result").innerHTML =
+        "Exam Completed!<br>Your Score: " + score + "/3";
+    } else {
+
+        alert("Please answer all questions");
+    }
+    return false;
+}
+</script>
+</body>
+</html>
